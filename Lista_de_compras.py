@@ -52,12 +52,12 @@ def prod():
         quantidade2 = int(ent_quantidade.get())             ### CAPTURA A QUANTIDADE DIGITADA PELO USUARIO APÓS PRESSIONAR "BOTAO SALVAR" ###
         calculo = quantidade2 * valor2                      ### EXECUTA CALCULO DE DUAS VARIAVEIS ###
         conta.append(calculo)                               ### ATRIBUI O RESULTADO DE "CALCULO" A LISTA PRRA USO FURUTO ###
-        produto2 = ent_produto.get()
-        produto.append(produto2)
-        lb_total_item1 = Label(mercado, text = produto2)
-        lb_total_item1.grid(row = 4, column = 1)
-        lb_total_item = Label(mercado, text=calculo)
-        lb_total_item.grid(row = 4, column =2)
+        produto2 = ent_produto.get()                        ### CAPTURA NOME DO PRODUTO DIGITADO PELO USUARIO APÓS PRESSIONAR "BOTAO SALVAR" ###
+        produto.append(produto2)                            ### ATRIBUI O NOME DO PRODUTO DIGITADO PELO USUARIO EM UMA LISTA PARA USO FUTURO ###
+        lb_total_item1 = Label(mercado, text = produto2)    ####################################################################################
+        lb_total_item1.grid(row = 4, column = 1)            # EXIBE NOME DO PRODUTO                                                            #
+        lb_total_item = Label(mercado, text=calculo)        #                   E O RESULTADO DO CALCULO ENTRE VALOR E QUANTIDADE              #
+        lb_total_item.grid(row = 4, column =2)              ####################################################################################
         calculo2 = list(map(float, conta))
         total = sum(calculo2)
         lb_total_g = Label(mercado, text = 'TOTAL DA COMPRA: R$')
