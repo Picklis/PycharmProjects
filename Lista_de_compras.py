@@ -18,42 +18,46 @@ PROGRAMA COMPRAS BASICO
 produto = []# RECEBE E ARMAZENDA TODOS OS PRODUTOS DIGITADOS PELO USUSARIO #
 conta = [] # RECEBE E ARMAZENA OS DADOS PARA CALCULOS #
 produto2 = None
-#valor2 = 0
 valor = []
 quantidade = []
-#quantidade2 = 0
-#calculo = None
-#calculo2 = []
 conta = []
-def prod():
-    lb_produto = Label(mercado, text='PRODUTO :')
-    lb_produto.grid(row = 1, column =1)
-    ent_produto = Entry(mercado, width = 10)
-    ent_produto.grid(row = 1, column =2)
-    lb_valor = Label(mercado, text='VALOR :')
-    ent_valor = Entry(mercado, width = 10)
-    lb_quantidade = Label(mercado, text='QUANTIDADE :')
-    ent_quantidade = Entry(mercado, width = 10)
-    lb_valor.grid(row = 2, column =1)
-    ent_valor.grid(row = 2, column =2)
-    lb_quantidade.grid(row = 3, column =1)
-    ent_quantidade.grid(row = 3, column =2)
 
+######### PARTE DE CODIGO QUE CAPTURA E PROCESSA OS DADOS IMPUTADOS PELO USUARIO  ##########
+def prod():
+    
+    ###  EXIBE TEXTO NA JANELA DO PROGRAMA  ###
+    lb_produto = Label(mercado, text='PRODUTO :')   
+    lb_valor = Label(mercado, text='VALOR :')
+    lb_quantidade = Label(mercado, text='QUANTIDADE :')
+    
+    ### CAMPOS PARA ENTRADA DE DADOS PELO USUARIO ###
+    ent_valor = Entry(mercado, width = 10)          
+    ent_quantidade = Entry(mercado, width = 10)     
+    ent_produto = Entry(mercado, width = 10)        
+    
+    ### POSICIONA LABEL NA JANELA ###
+    lb_produto.grid(row = 1, column =1)             
+    lb_valor.grid(row = 2, column =1)
+    lb_quantidade.grid(row = 3, column =1)
+    
+    ### POSICIONA O CAMPO "ENTRY", DE ENTRADA DE DADOS NA JANELA ### 
+    ent_produto.grid(row = 1, column =2)
+    ent_valor.grid(row = 2, column =2)
+    ent_quantidade.grid(row = 3, column =2)
+    
+    
+    ##### FUNÇÃO QUE EXECUTA CALCULOS, E ATRIBUI VALORES AS VARIAVEIS #####
     def calc_item():
-        valor2 = float(ent_valor.get())
-        quantidade2 = int(ent_quantidade.get())
-        calculo = quantidade2 * valor2
-        conta.append(calculo)
+        valor2 = float(ent_valor.get())                     ### CAPTURA O VALOR DIGITADO PELO USUARIO APÓS PRESSIONAR "BOTAO SALVAR" ###
+        quantidade2 = int(ent_quantidade.get())             ### CAPTURA A QUANTIDADE DIGITADA PELO USUARIO APÓS PRESSIONAR "BOTAO SALVAR" ###
+        calculo = quantidade2 * valor2                      ### EXECUTA CALCULO DE DUAS VARIAVEIS ###
+        conta.append(calculo)                               ### ATRIBUI O RESULTADO DE "CALCULO" A LISTA PRRA USO FURUTO ###
         produto2 = ent_produto.get()
         produto.append(produto2)
         lb_total_item1 = Label(mercado, text = produto2)
         lb_total_item1.grid(row = 4, column = 1)
         lb_total_item = Label(mercado, text=calculo)
         lb_total_item.grid(row = 4, column =2)
-
-        #def total():
-        print('estou sendo executado a cada click')
-
         calculo2 = list(map(float, conta))
         total = sum(calculo2)
         lb_total_g = Label(mercado, text = 'TOTAL DA COMPRA: R$')
