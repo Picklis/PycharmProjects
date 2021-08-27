@@ -58,26 +58,25 @@ def prod():
         lb_total_item1.grid(row = 4, column = 1)            # EXIBE NOME DO PRODUTO                                                            #
         lb_total_item = Label(mercado, text=calculo)        #                   E O RESULTADO DO CALCULO ENTRE VALOR E QUANTIDADE              #
         lb_total_item.grid(row = 4, column =2)              ####################################################################################
-        calculo2 = list(map(float, conta))
-        total = sum(calculo2)
-        lb_total_g = Label(mercado, text = 'TOTAL DA COMPRA: R$')
-        lb_total_g.grid(row = 5, column = 1)
-        lb_total_geral = Label(mercado, text=total)
-        lb_total_geral.grid(row = 5, column = 2)
-        #print(calculo, produto,'total: ', conta)
-    bt_qtde = Button(mercado, text='salvar', command=calc_item)
-    bt_qtde.grid(row = 2, column = 3)
-    #bt_qtde = Button(mercado, text='salvar', command=total)
-    #bt_qtde.grid(row = 5, column = 2)
-    lb_total_item1 = Label(mercado, text = '                                      ')
-    lb_total_item1.grid(row = 4, column = 1)
-    lb_total_item = Label(mercado, text="                                         ")
-    lb_total_item.grid(row = 4, column =2)
-bt_novo = Button(mercado, text='limpa', command=prod)
+        
+        calculo2 = list(map(float, conta))                  ## converte a lista sring, para float e atribui na variavel calculo2  ##
+        total = sum(calculo2)                               ## CALCULA O TOTAL DA COMPRA BASEADO NA LISTA "CONTA" ######
+        
+        lb_total_g = Label(mercado, text = 'TOTAL DA COMPRA: R$')###############################################################################
+        lb_total_g.grid(row = 5, column = 1)                     # LABELS PARA EXIBIR                                                          #
+        lb_total_geral = Label(mercado, text=total)              #                      O TOTAL DA COMPRA                                      #
+        lb_total_geral.grid(row = 5, column = 2)                 ###############################################################################
+        
+    bt_qtde = Button(mercado, text='salvar', command=calc_item)  ## BOTAO QUE FAZ EXECUTAR AS FUNÇÕES E EXIBIR OS RESULTADOS NA TELA ##
+    bt_qtde.grid(row = 2, column = 3)                                                       
+    
+    lb_total_item1 = Label(mercado, text = '                                      ')    #########################################################
+    lb_total_item1.grid(row = 4, column = 1)                                            # CRIA UMA LABEL VAZIA PARA ESCONDER ARQUIVOS ANERIORES
+    lb_total_item = Label(mercado, text="                                         ")    # SOLUCAO TEMPORARIA PARA APRENDER A FUNÇÃO DE LIMPAR LABEL
+    lb_total_item.grid(row = 4, column =2)                                              #########################################################
+
+bt_novo = Button(mercado, text='limpa', command=prod)           # BOTAO PARA RENOVAR OS CAMPOS DA TELA #
 bt_novo.grid(row = 17, column = 2)
-#prod()
-
-
 
 mercado.mainloop()
 
