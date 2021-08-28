@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-### MEU PRIMEIRO CODIGO NO GITHUB ###
-###                               ###
+
 ######  LISTA DE COMPRA GERAL  ######
 
 from tkinter import *          ### COMO ESTE CODIGO UTILIZA INTERFACE GRAFICA ELE PRECISA DA BIBLIOTECA tkinter ####
