@@ -67,8 +67,9 @@ def prod():
         lb_total_item.grid(row = 4, column =2)              ####################################################################################
 
         calculo2 = list(map(float, conta))                  ## converte a lista sring, para float e atribui na variavel calculo2  ##
-        total = round(sum(calculo2),2)                               ## CALCULA O TOTAL DA COMPRA BASEADO NA LISTA "CONTA" ######
-
+        total2 = sum(calculo2)                               ## CALCULA O TOTAL DA COMPRA BASEADO NA LISTA "CONTA" ######
+        total = round(total2, 2)                            ## EXIBE O CALCULO ARREDONDADO COM DUAS CASAS DECIMAIS ##
+        
         lb_total_g = Label(mercado, text = 'TOTAL DA COMPRA: R$')###############################################################################
         lb_total_g.grid(row = 5, column = 1)                     # LABELS PARA EXIBIR                                                          #
         lb_total_geral = Label(mercado, text=total)              #                      O TOTAL DA COMPRA                                      #
